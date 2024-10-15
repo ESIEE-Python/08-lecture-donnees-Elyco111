@@ -1,5 +1,6 @@
-#### Imports et définition des variables globales
-import random
+'''
+coucou
+'''
 
 FILENAME = "listes.csv"
 
@@ -14,40 +15,61 @@ def read_data(filename):
     Returns:
         list: le contenu du fichier (1 list par ligne)
     """
-    l = []
-    return l
+    with open(filename, 'r', encoding='utf-8') as file:
+        lines = file.readlines()
+        data = [list(map(int, line.strip().split(';'))) for line in lines]
+    return data
 
 def get_list_k(data, k):
-    l = []
-    return l
+    '''
+    coucou
+    '''
+    return data[k]
 
 def get_first(l):
-    return None
+    '''
+    coucou
+    '''
+    return l[0]
 
 def get_last(l):
-    return None
+    '''
+    coucou
+    '''
+    return l[-1]
 
 def get_max(l):
-    return None
+    '''
+        coucou
+    '''
+    return max(l)
 
 def get_min(l):
-    return None
+    '''
+    coucou
+    '''
+    return min(l)
 
 def get_sum(l):
-    return None
-
-
-#### Fonction principale
-
+    '''
+    coucou
+    '''
+    return sum(l)
 
 def main():
-    pass
-    # data = read_data(FILENAME)
-    # for i, l in enumerate(data):
-    #     print(i, l)
-    # k = 37
-    # print(k, get_list_k(data, 37))
+    '''
+    coucou
+    '''
+    filename = 'listes.csv'
+    data = read_data(filename)
 
+    print("Data:", data)
+    print("3rd list (index 2):", get_list_k(data, 2))
+    print("First element of 3rd list:", get_first(get_list_k(data, 2)))
+    print("Last element of 3rd list:", get_last(get_list_k(data, 2)))
+    print("Max of 3rd list:", get_max(get_list_k(data, 2)))
+    print("Min of 3rd list:", get_min(get_list_k(data, 2)))
+    print("Sum of 3rd list:", get_sum(get_list_k(data, 2)))
 
 if __name__ == "__main__":
     main()
